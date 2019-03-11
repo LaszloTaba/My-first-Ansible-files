@@ -1,0 +1,25 @@
+---
+- hosts: new-machines
+  tasks:
+  - name: Yum update
+    yum: name=* state=latest
+
+  - name: Install Apache service
+    yum: name=httpd state=latest
+  - name: Start and enable Apache service
+    service: name=httpd state=restarted enabled=yes
+  - name: Add Apache to firewall
+    command: firewall-cmd --permanent --add-service=http
+
+  - name: Install FTP service
+    yum: name=vsftpd state=latest
+  - name: Start and enable FTP service
+    service: name=vsftpd state=restarted enabled=yes
+  - name: Add FTP to firewall
+    command: firewall-cmd --permanent --add-service=ftp
+
+  - name: Restart the firewall service
+    service: name=firewalld state=restarted
+
+  - name: Group install Virtualization Host package
+    yum: name="@^virtualization host" state=latest
