@@ -1,0 +1,3 @@
+---
+  - name: group install of the virtualization host package
+    yum: name="@^virtualization host" state=latest

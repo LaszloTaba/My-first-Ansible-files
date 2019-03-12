@@ -1,0 +1,7 @@
+---
+  - name: install the Apache service
+    yum: name=httpd state=latest
+  - name: start and enable the Apache Service
+    service: name=httpd state=restarted enabled=yes
+  - name: add Apache to firewall services
+    command: firewall-cmd --permanent --add-service=http

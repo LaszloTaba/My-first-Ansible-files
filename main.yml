@@ -1,0 +1,7 @@
+---
+# tasks file for /etc/ansible/roles/configure-vm
+- import_tasks: yum_update.yml
+- import_tasks: install_apache.yml
+- import_tasks: install_ftp.yml
+- import_tasks: restart_firewall.yml
+- import_tasks: install_virtualization_host.yml

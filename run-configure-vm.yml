@@ -1,0 +1,4 @@
+---
+ - hosts: new-machines
+   roles:
+   - configure-vm

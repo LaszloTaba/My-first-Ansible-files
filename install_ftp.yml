@@ -1,0 +1,7 @@
+---
+  - name: install FTP service
+    yum: name=vsftpd state=latest
+  - name: enable FTP
+    service: name=vsftpd state=restarted enabled=yes
+  - name: add FTP to firewall
+    command: firewall-cmd --permanent --add-service=ftp

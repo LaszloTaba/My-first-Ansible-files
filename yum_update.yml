@@ -1,0 +1,3 @@
+---
+  - name: run yum update on VM
+    yum: name=* state=latest
