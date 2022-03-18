@@ -1,4 +1,4 @@
-# My first Ansible
+# My first Ansible files
 My first Ansible files
 
 These are the first Ansible files I uploaded to GitHub. I wanted to show that I understand the basics of how Ansible works. The repository includes a main file, configure-vm.yml, which is a playbook that runs a yum update and installs apache, ftp, and virtualization host packages on servers included as "new-machine" hosts. The playbook also configures firewalls for those packages.
